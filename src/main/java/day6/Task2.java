@@ -4,22 +4,22 @@ public class Task2 {
     public static void main(String[] args) {
     Airplain boeing777 = new Airplain("Boeing", 2005, 63, 297560);
     boeing777.info();
-    System.out.println("Запас топлива в баках самолета равен " + boeing777.fillUp(5000) + " литров");
+    boeing777.fillUp(5000);
 
     Airplain an2 = new Airplain("USSR", 1947, 12, 3400);
     an2.setYear(1949);
     an2.setLenght(13);
-        System.out.println("Запас топлива в баках самолета равен " + an2.fillUp(50) + " литров");
-        System.out.println("Запас топлива в баках самолета равен " + an2.fillUp(100) + " литров");
+    an2.fillUp(50);
+    an2.fillUp(100);
     an2.info();
     }
 }
 class Airplain{
-    String producer;
-    int year;
-    int lenght;
-    int weight;
-    int fuel = 0;
+    private String producer;
+    private int year;
+    private int lenght;
+    private int weight;
+    private int fuel = 0;
 
     public Airplain(String producer, int year, int lenght, int weight){
         this.producer = producer;
@@ -30,9 +30,9 @@ class Airplain{
     public void info(){
         System.out.println("Изготовитель: " + producer + ", год выпуска: " + year + ", длина: " + lenght + ", вес: " + weight + ", количество топлива в баке: " + fuel);
     }
-    public int fillUp(int n){
-        int fillUp = fuel + n;
-        return fillUp;
+    public void fillUp(int n){
+        fuel = fuel + n;
+        System.out.println("Запас топлива в баках самолета равен " + fuel + " литров");
     }
 
     public void setProducer(String producer){
