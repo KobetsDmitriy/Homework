@@ -19,13 +19,16 @@ StringBuilder sb = new StringBuilder();
 
         long startTime1 = System.currentTimeMillis();
 
+        String stringAll = "";
+
 for (int j = 0; j <= 20000; j++){
     String string = j + " ";
-    System.out.print(string);
+    stringAll = stringAll + string;
 }
-        System.out.println();
-        long stopTime1 = System.currentTimeMillis();
-        System.out.println("Длительность работы, в мс.: " + (stopTime1 - startTime1));
+System.out.print(stringAll);
+System.out.println();
+long stopTime1 = System.currentTimeMillis();
+System.out.println("Длительность работы, в мс.: " + (stopTime1 - startTime1));
     }
 }
 
